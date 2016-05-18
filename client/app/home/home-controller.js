@@ -13,7 +13,7 @@ angular.module('app.home', [])
       })
     }
 
-    $scope.searchNow = function(){
+    $scope.searchNow = function() {
 
       //validation
       if( $scope.userInput.searchTags === undefined ) {

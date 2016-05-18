@@ -21,8 +21,8 @@ app.use(express.static(__dirname + '/../client')); // !! might need to change fo
 app.use('/node_modules', express.static(__dirname + '/../node_modules'))
 
 //Model and Route variables, assigned after database connection is established
-var questionsQuery,
-    questionsRouter,
+var searchQuery,
+    searchRouter,
     usersQuery,
     usersRouter;
 
@@ -35,20 +35,22 @@ dbConfig.getDB().then( function(db){
   //before requiring files.
 
   //pass database connection to each model
-  questionsQuery = require('./questions/questionsModel.js')(db);
-  usersQuery = require('./users/usersModel.js')(db);
+  searchQuery = require('./search/searchModel.js')(db);
+  // usersQuery = require('./users/usersModel.js')(db);
 
   //api routing
-  questionsRouter = express.Router();
-  usersRouter = express.Router();
+  searchRouter = express.Router();
+  // usersRouter = express.Router();
 
   //allocate router for type of request by component
-  app.use('/api/questions', questionsRouter);
-  app.use('/api/users', usersRouter);
+  app.use('/api/search', searchRouter);
+  // app.use('/api/users', usersRouter);
 
   //inject routers and db model interface in the files
-  require('./questions/questionsRoutes.js')(questionsRouter, questionsQuery);
-  require('./users/usersRoutes.js')(usersRouter, usersQuery);
+  require('./search/searchRoutes.js')(searchRouter, searchQuery);
+  // require('./users/usersRoutes.js')(usersRouter, usersQuery);
+
+  console.error('all methods: ', searchRouter, searchQuery, searchModel);
 
 })
 
