@@ -4,12 +4,15 @@ angular.module('app.home', [])
   .controller('HomeController', ["$scope", "$location", "UserSearch", function($scope, $location, UserSearch) {
     $scope.userInput = {} //searchtags
     $scope.userInputError = false;
-    $scope.posts = [];
+    $scope.items = [];
 
     $scope.getAllPosts = function(){
       UserSearch.getPosts()
       .then(function(results){
-        console.log('results from getAll: ', results);
+        console.log('results from getAll: ', results.results.data[0].answers[0]);
+        $scope.items = results.results.data;
+        $scope.items[0].answers[0].text = "testing answer. It will be a paragraph and needs formatting";
+        $scope.items[0].answers[0].user = "monkey";
       })
     }
 
