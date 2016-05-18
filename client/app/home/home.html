@@ -1,0 +1,38 @@
+<div class='container'>
+
+  <h1> What are you looking for? </h1>
+  <div class='search-bar'>
+    <form class="search-form">
+      <input type='text' placeholder='' ng-model='userInput.searchTags'>
+      <button type='submit' ng-click='searchNow()'> Find topics </button>
+      <span ng-show='userInputError' class='error'> Provide atleast one word!</span>
+    </form>
+
+  </div>
+
+ <div class = 'results' ng-show='topicResults'>
+  <h2> Topics found! </h2>
+  <div class='topics-all' ng-model='items'>
+    <div class='topic-item' ng-repeat='item in items'>
+        <div class='row1'>
+          <a class='url' ng-model='item.url' ng-href='{{item.url}}' target='_blank'> {{ item.question }} </a>
+        </div> 
+        <div class='row2'>
+          <span> {{ item.user }} </span>
+          <span> {{ item.userExerpt }}</span>
+        </div>
+        <!-- add answers in ngloop as well -->
+        <div class='row3'>
+          {{ item.answer1.text }}
+          {{ item.answer1.user }}
+        </div>
+        <div class='row4'>
+          {{ item.answer2.text }}
+          {{ item.answer2.user }}
+        </div>
+        <br/>
+      </div>
+    </div>
+  </div>
+
+</div>
