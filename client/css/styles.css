@@ -1,5 +1,5 @@
 body {
-    background: #b3b3b3;
+    background: #595959;
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
@@ -86,7 +86,7 @@ all other fonts #4d4d4d
 
 .answer {
     /*background-color: #fdecb3;*/
-    background-color: #fef4cd;
+    background-color:   #b9dfd2;
     padding: 13px 3px 3px 13px;
     margin-top: 5px;
     margin-bottom: 10px;
