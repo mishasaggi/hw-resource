@@ -47,6 +47,7 @@ angular.module('app.home', [])
       .then(function(results){
         console.log('all results in search now: ', results.results);
 
+
       })
 
 
