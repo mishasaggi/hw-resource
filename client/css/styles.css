@@ -73,7 +73,8 @@ all other fonts #4d4d4d
 }
 
 .answer {
-    background-color: #fdecb3;
+    /*background-color: #fdecb3;*/
+    background-color: #fef4cd;
     padding: 3px 3px 3px 3px;
     margin-top: 5px;
     margin-bottom: 10px;
