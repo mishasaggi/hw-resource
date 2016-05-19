@@ -33,6 +33,13 @@ h2 {
 
 h3 {
     color: #5f412d;
+    max-height: 3px;
+    margin: none;
+    padding: none;
+}
+
+h5 {
+    max-height: 3px;
 }
 
 .main-container {
@@ -72,13 +79,19 @@ all other fonts #4d4d4d
 
 }
 
+.ques {
+    color: #5f412d;
+    font-size: 1.5em;
+}
+
 .answer {
     /*background-color: #fdecb3;*/
     background-color: #fef4cd;
-    padding: 3px 3px 3px 3px;
+    padding: 13px 3px 3px 13px;
     margin-top: 5px;
     margin-bottom: 10px;
 
+    font-size: 1.2em;
 }
 
 .user {

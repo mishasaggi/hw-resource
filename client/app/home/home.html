@@ -12,33 +12,31 @@
 
  <div class = 'results'>
   <h3> Topics found! </h3>
-  <div class='posts-all' ng-model='items'>
-    <div class='post' ng-repeat='item in items'>
+  <div class='posts-all' ng-model='posts'>
+    <div class='post' ng-repeat='item in posts.items'>
         <div class='question'>
         <h2> Question: </h2>
-          {{ item.question }}
+          <span class= "ques"> {{ item.question }} </span>
           <div class='user'>
             <h5> question asked by: </h5>
             <h3> {{ item.user }} </h3>
-            <!-- <span> {{ item.userExerpt }}</span> -->
+            <h5> likes: {{ posts.users[ item.user ] }}</h5>
+            <span> <img ng-src= "{{ posts.images[ item.user] }}" height="50" width="70"> </span>
           </div>
         </div>
         <!-- add answers in ngloop as well -->
-        <div class='answer'>
-          {{ item.answers[0].text }}
+        <div class='answer' ng-repeat="subitem in item.answers">
+          {{ subitem.text }}
           <div class='user'>
             <h5> answered by: </h5>
-            <h3> {{ item.answers[0].user }} </h3>
+            <h3> {{ subitem.user }} </h3>
+            <h5> likes: {{ posts.users[ subitem.user ] }}</h5>
+            <span> <img ng-src= "{{ posts.images[ subitem.user] }}" height="50" width="70"> </span>
+            <span></span>
           </div>
         </div>
 
-        <div class='answer'>
-          {{ item.answers[1].text }}
-          <div class='user'>
-            <h5> answered by: </h5>
-            <h3> {{ item.answers[1].user }} </h3>
-          </div>
-        </div>
+
 
         <br/>
       </div>
