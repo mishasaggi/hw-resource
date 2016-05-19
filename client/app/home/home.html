@@ -1,6 +1,6 @@
 <div class='container'>
 
-  <h1> What are you looking for? </h1>
+  <h1> Ask me something! </h1>
   <div class='search-bar'>
     <form class="search-form">
       <input type='text' placeholder='' ng-model='userInput.searchTags'>
@@ -11,13 +11,15 @@
   </div>
 
  <div class = 'results'>
-  <h2> Topics found! </h2>
+  <h3> Topics found! </h3>
   <div class='posts-all' ng-model='items'>
     <div class='post' ng-repeat='item in items'>
         <div class='question'>
+        <h2> Question: </h2>
           {{ item.question }}
           <div class='user'>
-            <span> {{ item.user }} </span>
+            <h5> question asked by: </h5>
+            <h3> {{ item.user }} </h3>
             <!-- <span> {{ item.userExerpt }}</span> -->
           </div>
         </div>
@@ -25,19 +27,22 @@
         <div class='answer'>
           {{ item.answers[0].text }}
           <div class='user'>
-            {{ item.answers[0].user }}
+            <h5> answered by: </h5>
+            <h3> {{ item.answers[0].user }} </h3>
           </div>
         </div>
 
         <div class='answer'>
           {{ item.answers[1].text }}
           <div class='user'>
-            {{ item.answers[1].user }}
+            <h5> answered by: </h5>
+            <h3> {{ item.answers[1].user }} </h3>
           </div>
         </div>
 
         <br/>
       </div>
+
     </div>
   </div>
 

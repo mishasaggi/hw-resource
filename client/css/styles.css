@@ -1,5 +1,5 @@
 body {
-    background: #eee;
+    background: #b3b3b3;
     text-align: center;
     padding: 0 25px;
     font-family: arial, sans-serif;
@@ -22,19 +22,70 @@ ul li {
     list-style-type: none;
     display: inline;
 }
+/*
+side div??
+*/
+
+h2 {
+    color: #f2a918;
+    text-shadow: 1px 1px #b3b3b3;
+}
+
+h3 {
+    color: #5f412d;
+}
 
 .main-container {
-    width: 60%;
-    margin: 0 20% 0 20%;
+    width: 70%;
+    margin: 0 15% 0 15%;
     float: center;
+    background-color: #76c1a8;
+    padding: 2% 2% 2% 2%;
 }
+
+/*
+Put a border around each post div
+question in bold
+answer div in a lighter shade of gray than the question
+user div in a different color text, align right
+
+all other fonts #4d4d4d
+*/
+
+.results {
+    color: #4d4d4d;
+
+}
+
 .posts-all {
     text-align: left;
 }
 
-.stats-results {
-    text-align: left;
+.post {
+    border-top-style: solid;
+    border-color: #f2a918;
+    margin-bottom: 20px;
+
 }
+
+.question {
+
+}
+
+.answer {
+    background-color: #fdecb3;
+    padding: 3px 3px 3px 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+
+}
+
+.user {
+    text-align: right;
+
+}
+
+
 
 button {
     background-color: #1a1a1a; /* Green */
