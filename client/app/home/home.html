@@ -2,18 +2,19 @@
 
   <h1> Ask me something! </h1>
   <div class='search-bar'>
-    <form class="search-form">
-      <input type='text' placeholder='' ng-model='userInput.searchTags'>
-      <button type='submit' ng-click='searchNow()'> Find topics </button>
-      <span ng-show='userInputError' class='error'> Provide atleast one word!</span>
-    </form>
+    <!-- <form class="search-form"> -->
+      <!-- <input type='text' placeholder='' ng-model="searchText"> -->
+      <input id="search" type="search" placeholder= "search by keywords here" ng-model="searchText" required>
+      <!-- <button type='submit' ng-click='searchNow()'> Find topics </button> <br/> -->
+<!--       <span ng-show='userInputError' class='error'> I wish I could read minds...please provide atleast one word to search!</span> -->
+    <!-- </form> -->
 
   </div>
 
  <div class = 'results'>
-  <h3> Topics found! </h3>
+  <h3> </h3>
   <div class='posts-all' ng-model='posts'>
-    <div class='post' ng-repeat='item in posts.items'>
+    <div class='post' ng-repeat='item in posts.items | filter:searchText'>
         <div class='question'>
         <h2> Question: </h2>
           <span class= "ques"> {{ item.question }} </span>

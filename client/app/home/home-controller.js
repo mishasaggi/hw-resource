@@ -43,6 +43,13 @@ angular.module('app.home', [])
       } else {
         $scope.userInputError = false;
 
+        UserSearch.getPosts()
+      .then(function(results){
+        console.log('all results in search now: ', results.results);
+
+      })
+
+
         //call the service method to make a server call to fetch all posts
         console.log('In search now function');
         // UserSearch.getPosts($scope.userInput)
